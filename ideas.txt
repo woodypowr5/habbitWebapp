@@ -1,0 +1,52 @@
+
+
+Plan 
+
+My Plan
+    all markerswith icons/metadata
+
+    Each marker: 
+
+    click expand panel. Includes:
+        View Details - shows the following info: 
+            Icon - default if none, 'none' also an option, or select from list (maybe from upload later?)
+            Marker name - inline edit
+            Date added
+            Percentage of days with logged values
+            Average value 
+            Std Deviation
+            Goal progress micro charts, one for each goal (arranged grouped by marker), including:
+                Met goal? true/false
+                Progress toward goal (% or something)
+                Recent Trend (maybe last 5 records or something, + or -) 
+        Tracker - sends to a calendar tracker just for that marker 
+            For discrete: marks with a red x or green x for false/true
+            For range: marks with a vertical bar representing the value logged for the day
+        Goals
+            Sends to goals page with the markerName passed as activeMarker
+
+    Actions: 
+        Add new marker: 
+            Displays "Wizard" component (from Clarity) with these steps:
+                Marker Name
+                Data Type (boolean, range, etc.)
+                Logging Frequency
+                    Daily
+                    Weekly
+                    Monthly
+                    Custom - log this every X days
+                    Goals - 
+                        add goal - three parts - using a Stepper component with the currently selected value the part (also highlight that part) in the goal.text
+                            to have a average score greater/less than x - graphic showing the selected value in some sort of meter or gauge
+                            to make entries at least x% of the time - graphic with an example sub-"calendar" representing the required interval
+                                Daily - show 3 days with green Xs
+                                Every other day - show 4 days with 2 green x
+                                Weekly - show compressed 2-week graphic with one green x each week
+                                Monthly - etc
+                                Cutom - every x days (grphically show the least number of week "rows" required to host 2 cycles of the interval, for example, once every 5 days would require 10 days, thus 2 week rows are required)
+                            range: to be within x of a certain value - graphic show vertical bar with a line at the value and shaded bar representing range
+                            boolean: to answer yes/no x% of the time - graphic - for a gauge (speedometer-like), where the needle is middle at 50%
+                            weighted importance to score score
+                            Have special entry for the master score with goal options: 
+                        remove goal (if goals exist) with confirmation Modal
+                        
